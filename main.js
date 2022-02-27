@@ -1,7 +1,7 @@
 let checkVowelBtn = document.querySelector('button');
 let checkConsonantBtn = document.querySelector('.consonant');
 let checkBothBtn = document.querySelector('.both');
-let body = document.querySelector('body');
+let div = document.querySelector('.container');
 
 checkVowelBtn.addEventListener('click', checkVowel);
 checkConsonantBtn.addEventListener('click', checkConsonant);
@@ -18,7 +18,7 @@ function checkVowel(e) {
       `Your word was '${textInput}' and it had ${vowel.length} vowels.`
     )
   );
-  body.appendChild(outPut);
+  div.appendChild(outPut);
 
   document.querySelector('.text').value = '';
 }
@@ -35,7 +35,7 @@ function checkConsonant(e) {
       `Your word was '${textInput}' and it had ${consonant.length} consonants`
     )
   );
-  body.appendChild(outPut);
+  div.appendChild(outPut);
 
   document.querySelector('.text').value = '';
 }
@@ -48,14 +48,14 @@ function checkBoth(e) {
   let sum = '';
 
   let outPut = document.createElement('h2');
-  outPut.className = 'vowel-number';
+  outPut.className = 'vowel-consonant';
   outPut.appendChild(
     document.createTextNode(
       `Your word was '${textInput}' and it had ${vowel.length} vowels and ${consonant.length}
       consonants.`
     )
   );
-  body.appendChild(outPut);
+  div.appendChild(outPut);
 
   document.querySelector('.text').value = '';
 }
